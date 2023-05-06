@@ -5,8 +5,8 @@ from socket import AF_INET, socket, SOCK_STREAM
 import json
 import helper
 
-app_key = 'mhtwqu5un2mc4r2'
-app_secret = '75f7l09gwv0qspe'
+app_key = ''
+app_secret = ''
 server_addr = "localhost"
 server_port = 8090
 redirect_uri = "http://" + server_addr + ":" + str(server_port)
@@ -132,8 +132,8 @@ class Dropbox:
         # Call Dropbox API
         goiburuak = {'Host': 'api.dropboxapi.com', 'Authorization': 'Bearer ' + access_token,
                      'Content-Type': 'application/json'}
-        datuak_json = json.dumps(
-            datuak)  # TODO en la eskaera hay que mandar un JSON asi que hay que pasar los datos de hiztegi de python a JSON
+        # TODO en la eskaera hay que mandar un JSON asi que hay que pasar los datos de hiztegi de python a JSON
+        datuak_json = json.dumps(datuak)
         erantzuna = requests.post(uri, headers=goiburuak, data=datuak_json, allow_redirects=False)
         print(erantzuna.status_code)
         print("\nErantzuna\n")
